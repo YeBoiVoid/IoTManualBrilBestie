@@ -10,4 +10,4 @@ It uses Arduino's connected to Wi-Fi to form a connection, it also uses built-in
 - 1x microphone
 #### Software
 - Arduino IDE
- - test
+  - test
