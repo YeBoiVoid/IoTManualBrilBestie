@@ -10,6 +10,8 @@ It uses Arduino's connected to Wi-Fi to form a connection, it also uses built-in
 - 1x microphone
 #### Software
 - Arduino IDE
-    Libraries
   - AdaFruit NeoPixel
-  - AdaFruit IO Arduino
+  - AdaFruit IO Arduino\
+
+ ## Steps
+ 1. testing
