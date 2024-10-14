@@ -25,6 +25,13 @@ Now is the time we connect everything together.
 1. Create an AdaFruit account.
 2. Create a new feed and connnect your arduino to it.
 ### Step 3. Set up AdaFruit IO with Telegram.
-4. Create functions to send and recieve messages to and form the AdaFruit IO.
-5. When you send a message to the bot in Telegram, you can read and send the contents through the AdaFruit IO. This is how wer're setting up the "connection" between our arduino's.
-6. When you recieve a message make sure you can read the contents, otherwise this system is quite useless.
+1. Create functions to send and recieve messages to and form the AdaFruit IO.
+2. When you send a message to the bot in Telegram, you can read and send the contents through the AdaFruit IO. This is how wer're setting up the "connection" between our arduino's.
+3. When you recieve a message make sure you can read the contents, otherwise this system is quite useless.
+### Step 4. Trouble Shooting with the led strip.
+Our led strip is a great way of trouble shooting our system, since we dont always have acces to the serial monitor our strip will act as one.
+We can set certain colors or patterns to act as functions.
+Let's say we want to send a message, we can flash white while it's sending, and turn the light to green when it is sent, or red when it's not sent.
+1. Connect the led strip to your Arduino
+2. Create functions for flashing or simply turning your strip into a color (this is not necessary, but it helps to speed up the process. Otherwise you would have to type the same code a million times.)
+3. Put these functions into the existing functions for sending, recieving etc.
