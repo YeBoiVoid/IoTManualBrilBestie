@@ -36,7 +36,7 @@ Let's say we want to send a message, we can flash white while it's sending, and 
 2. Create functions for flashing or simply turning your strip into a color (this is not necessary, but it helps to speed up the process. Otherwise you would have to type the same code a million times.)
 3. Put these functions into the existing functions for sending, recieving etc.
 ## Troubleshoot
-###Wi-Fi issues:
+### Wi-Fi issues:
 - Make sure your board is compatible with Wi-Fi.
 - Make sure the Wi-Fi- credentials are correct.
 - You can test connectivity using a temporary hotspot and checking if the arduino has connected to it.
