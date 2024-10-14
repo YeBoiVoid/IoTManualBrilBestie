@@ -5,12 +5,14 @@ It uses Arduino's connected to Wi-Fi to form a connection, it makes use of a Tel
 #### HardWare (Per Person)
 - 1x Arduino
 - 1x matrix keyboard or compatible full-size keyboard (if you can find it)
-- 1x Led strip
+- 1x Led strip (if you want)
 #### Software
 - Arduino IDE
 - AdaFruit NeoPixel
 - AdaFruit IO Arduino
 - Telegram account
+## Actually conencting everything together
+Now is the time we connect everything together. 
  ### Step 1. Connect modules to the board
  The arduino's cant sent texts or make calls, so we're gonna have to come up with a solution, this solution is a bot in telegram which we can connect our arduino to.
 1. Connect the speaker and microphone to the arduino.
