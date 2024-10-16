@@ -25,6 +25,7 @@ Now is the time we connect everything together.
 1. Create an AdaFruit account.
 2. Create a new feed and connnect your arduino to it.
 ### Step 3. Set up AdaFruit IO with Telegram.
+Since voice messages will not be doable, text will have to do. The AdaFruit IO cannot send words. This is quite troubling if you want to send messages. However, it can send numeric values. And the alphabeth exists, so all we need to do is create an function that converts words into numeric values. So a word like "hello" would be "8 5 9 9 15", these values are something we can send to the AdaFruit IO. 
 1. Create functions to send and recieve messages to and form the AdaFruit IO.
 2. When you send a message to the bot in Telegram, you can read and send the contents through the AdaFruit IO. This is how wer're setting up the "connection" between our arduino's.
 3. When you recieve a message make sure you can read the contents, otherwise this system is quite useless.
