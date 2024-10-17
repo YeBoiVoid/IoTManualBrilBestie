@@ -8,7 +8,6 @@ It uses Arduino's connected to Wi-Fi to form a connection, it makes use of a Tel
 - 1x Arduino
 #### Software
 - Arduino IDE
-- AdaFruit NeoPixel
 - AdaFruit IO Arduino
 - Telegram (you can use the web version)
 ## Actually conencting everything together
