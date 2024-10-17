@@ -4,15 +4,11 @@ It uses Arduino's connected to Wi-Fi to form a connection, it makes use of a Tel
 ## What do you need
 #### HardWare (Per Person)
 - 1x Arduino
-- 1x matrix keyboard or compatible full-size keyboard (if you can find it)
-- 1x Led strip (if you want)
-- 
 #### Software
 - Arduino IDE
 - AdaFruit NeoPixel
 - AdaFruit IO Arduino
-- Telegram account
-- 
+- Telegram (you can use the web version)
 ## Actually conencting everything together
 Now is the time we connect everything together. 
  ### Step 1. Connect modules to the board
@@ -20,7 +16,7 @@ Now is the time we connect everything together.
 ### Step 2. Set up Telegram to the arduino
 1. Make a telegram account.
 2. You can search BotFather, make sure to use the one **WITH** the checkmark.
-   <image
+   ![BotFather Account] (/BotFather.png)
 4. Create a new bot and name it.
 5. Connect the bot to where when you type in Telegram, your arduino recieves the message.
 
