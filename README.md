@@ -2,7 +2,7 @@
 Bril Besties is a product that battles the lone poopers. With bril besties you are able to talk to your bestie while doing your business.
 It uses Arduino's connected to Wi-Fi to form a connection, it makes use of a Telegram bot so can talk with your bestie without a phone.
 
-**NOTE**: In the end I was unable to get the code working due to memory limitations. I tried fixing this by optimizing some of the code but I was unsuccesfull to make it work. The optimized code will be avalable under [TroubleShoot](https://github.com/YeBoiVoid/IoTManualBrilBestie/blob/main/Troubleshoot).
+**NOTE**: In the end I was unable to get the code working due to memory limitations. I tried fixing this by optimizing some of the code but I was unsuccesfull to make it work. The optimized code will be avalable under TroubleShoot.
 ## What do you need
 #### HardWare (Per Person)
 - 1x Arduino
