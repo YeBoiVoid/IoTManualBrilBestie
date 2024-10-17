@@ -2,7 +2,7 @@
 Bril Besties is a product that battles the lone poopers. With bril besties you are able to talk to your bestie while doing your business.
 It uses Arduino's connected to Wi-Fi to form a connection, it makes use of a Telegram bot so can talk with your bestie without a phone.
 
-**NOTE**: In the end I was unable to get the code working due to memory limitations. I tried fixing this by optimizing some of the code but I was unsuccesfull to make it work. The optimized code will be avalable under TroubleShoot.
+**NOTE**: In the end I was unable to get the code working due to memory limitations. I tried fixing this by optimizing some of the code but I was unsuccesfull to make it work.
 ## What do you need
 #### HardWare (Per Person)
 - 1x Arduino
@@ -79,25 +79,24 @@ Loop over the sentence and use function 1 to get an arrays of numbers.
 After this we can loop through the array and pass every index to AdaFruit.
 
 ```
-void stringToNumArray(std::string input){
-   std::cout<< "input string is " + input; // print input for debugging
-
-   int inputLength = strlen(input);
-   for(int i =0; i<inputLength; i++){
-       intArray[i] =charToNumber(input[i]);
-       if (intArray[i] == -1){
-           intArray[i] = 30;
-       }
-       std::cout<< intArray[i]; // print for debugging
-       std::cout <<"\n";
-   }
+ void stringToNumArray(std::string input) {
+  std::cout << "input string is " + input;  // print input for debugging
+  int inputLength = input.length();
+  int intArray[inputLength];
   for (int i = 0; i < inputLength; i++) {
-    digital->save(intArray[i]); // pass along to AdaFruit
-    delay(100);         // delay for 100ms
-    digital->save(60);  // 60 means the end of a message.
+    intArray[i] = charToNumber(input[i]);
+    if (intArray[i] == -1) {
+      intArray[i] = 30;
+    }
+    std::cout << "\n";
+    std::cout << intArray[i];  // print for debugging
   }
 }
 ```
+The output will be:
+
+![image](https://github.com/user-attachments/assets/675c0361-8122-48fd-baca-5a3e241aada6)
+
 ## Reciever side
 ### Recieve information from AdaFruit
 On the reciever side the code is quite similar; we still connect to AdaFruit and the telegram bot. The only difference here is that we want to turn an array of ints back into a string to do this i got this code:
@@ -121,7 +120,25 @@ std::string numArrayToString(int numArray[], size_t size) {
 }
 
 ```
-If we input something like```int numArray[] = {8, 5, 12, 12, 15, 30, 23, 15, 18, 12, 4};``` we get "Hello World" out of it.
+If we input something like ```int numArray[] = {8, 5, 12, 12, 15, 30, 23, 15, 18, 12, 4};``` we get "Hello World" out of it.
+
+### Send the message to the telegram bot as a reply
+We can send this message to the bot to send it as a reply, this is done through some simple code:
+```
+void handleNewMessages(int numNewMessages, String message)
+{
+  for (int i = 0; i < numNewMessages; i++)
+  {
+    bot.sendMessage(bot.messages[i].chat_id, message, "");
+  }
+}
+```
+We can input the message we recieved into this function to print out a message for us.
+In this picture the output is the input but the same principle applies.
+
+![image](https://github.com/user-attachments/assets/033fadc9-85f7-467a-95fb-6726e6a5e5d2)
+
+After we get this message we can simply reply and the arduino's will take care of the rest.
 
 ## Troubleshoot
 ### Wi-Fi issues:
@@ -133,4 +150,11 @@ If we input something like```int numArray[] = {8, 5, 12, 12, 15, 30, 23, 15, 18,
 - Make sure the credentails are correct.
 - Make sure AdaFruit IO is seeeing changes in the feed. (This can be checked with the activity graph)
 ### Memory Issues:
-
+Due to the arduino I was using we have very limited memory for use. Because of this I was unable to get this code to work. I tried a few things to optimize the code:
+- In the code I was frequently referring to std::string for my string needs. This is not very memory efficient as I found out, so I changed the std::string to simple char[].
+- I had quite a few Serial.println() in my code for debugging. I commented all of them out, this also did not fix the issue.
+- I had quite some loops with and without Serial.println() for debugging and general use. These are by default also not the best for your memory, so i removed as many of them as I could.
+After asking ChatGPT for more help he gave me a few things to try to resolve my problem:
+- Allocate memory.
+- limit the loops and the arrays for less memory use.
+- Use the FreeMemory library to check the free memory I have, to help with debugging. This also didn't help sadly.
