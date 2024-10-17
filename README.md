@@ -36,7 +36,7 @@ Now is the time we connect everything together.
 
 ## Sender Side
 ### Step 3. Connect Telegram with your arduino
-I used an example for the base, in this base you have to edit a few variables. Make sure you have the Library **"UniversalTelegramBot"** installed.
+I used an example for the base, in this base you have to edit a few variables. Make sure you have the Library "UniversalTelegramBot" installed.
 
 ![image](https://github.com/user-attachments/assets/0f566916-64c3-48e8-9f03-9ab2f1821875)
 
@@ -46,7 +46,7 @@ I found this example in File > example > UniversalTelegramBot > esp8266 > EchoBo
 
 1. Change the BotToken variable to the token that BotFather gave you.
 2. Change the Wi-Fi variables tom your hotspot credentials.
-3. Change "**handleNewMessage()**" and send the message to the functions we are going to create in the next step.
+3. Change "handleNewMessage()" and send the message to the functions we are going to create in the next step.
 
 ### Step 4. Connect AdaFruit IO with your arduino
 I used an example for the base, in this base you only have to edit a few variables to get the connection to work. Make sure you have the AdaFruit IO Arduino library installed. 
@@ -138,7 +138,6 @@ In this picture the output is the input but the same principle applies.
 ![image](https://github.com/user-attachments/assets/033fadc9-85f7-467a-95fb-6726e6a5e5d2)
 
 After we get this message we can simply reply and the arduino's will take care of the rest.
-
 ## Troubleshoot
 ### Wi-Fi issues:
 - Make sure your board is compatible with Wi-Fi.
